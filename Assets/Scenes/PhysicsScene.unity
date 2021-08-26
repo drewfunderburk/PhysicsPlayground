@@ -1973,7 +1973,7 @@ MonoBehaviour:
   _airMovementForce: 1000
   _crouchHeightPercentage: 0.5
   _crouchSpeedPercentage: 0.5
-  _crouchSpeedFactor: 0.1
+  _crouchSpeedFactor: 10
   _groundCheck: {x: 0, y: -0.6, z: 0}
   _groundCheckRadius: 0.5
   _groundMask:
