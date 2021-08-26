@@ -26,14 +26,12 @@ public class WakeupMaterialBehaviour : MonoBehaviour
         {
             _renderer.material = AsleepMaterial;
             _materialIsAwake = false;
-            Debug.Log("AsleepMaterial");
         }
         // Set material to awake if rigidbody is awake
         else if (!_materialIsAwake && !_rigidbody.IsSleeping() && AwakeMaterial)
         {
             _renderer.material = AwakeMaterial;
             _materialIsAwake = true;
-            Debug.Log("AwakeMaterial");
         }
     }
 }
