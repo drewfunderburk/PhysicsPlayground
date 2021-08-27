@@ -133,7 +133,7 @@ HingeJoint:
     spring: 0
     damper: 0
     targetPosition: 0
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
     targetVelocity: 0
     force: 0
@@ -170,7 +170,7 @@ HingeJoint:
     targetPosition: 0
   m_UseMotor: 1
   m_Motor:
-    targetVelocity: -500
+    targetVelocity: 0
     force: 1000
     freeSpin: 0
   m_UseLimits: 0
@@ -203,7 +203,7 @@ HingeJoint:
     spring: 0
     damper: 0
     targetPosition: 0
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
     targetVelocity: 0
     force: 0
@@ -240,7 +240,7 @@ HingeJoint:
     targetPosition: 0
   m_UseMotor: 1
   m_Motor:
-    targetVelocity: 500
+    targetVelocity: 0
     force: 1000
     freeSpin: 0
   m_UseLimits: 0
@@ -266,6 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6392462257744383268}
   - component: {fileID: 978394348}
+  - component: {fileID: 5014458674518197870}
   m_Layer: 0
   m_Name: Vehicle
   m_TagString: Untagged
@@ -308,6 +309,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5014458674518197870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8617095271183625846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbfbe35aeed1b946bec07b9ee644c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frontLeft: {fileID: 0}
+  frontRight: {fileID: 0}
+  rearLeft: {fileID: 0}
+  rearRight: {fileID: 0}
+  topSpeed: 500
 --- !u!1001 &975920100321650362
 PrefabInstance:
   m_ObjectHideFlags: 0
