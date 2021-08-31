@@ -25,9 +25,8 @@ public class PlayerBehaviour : MonoBehaviour
     private void Update()
     {
         // Get movement input
-        _desiredVelocity.x = Input.GetAxisRaw("Horizontal");
-        _desiredVelocity.y = 0;
-        _desiredVelocity.z = Input.GetAxisRaw("Vertical");
+        float inputRight = Input.GetAxisRaw("Horizontal");
+        float inputForward = Input.GetAxisRaw("Vertical");
 
         // Get camera forward
         Vector3 cameraForward = _camTransform.forward;
@@ -37,7 +36,8 @@ public class PlayerBehaviour : MonoBehaviour
         // Get camera right
         Vector3 cameraRight = _camTransform.right;
 
-        _desiredVelocity = (_desiredVelocity.x * cameraRight + _desiredVelocity.z * cameraForward);
+        // Set velocity relative to camera
+        _desiredVelocity = (inputRight * cameraRight + inputForward * cameraForward);
 
         // Scale movement to desired velocity
         _desiredVelocity.Normalize();
