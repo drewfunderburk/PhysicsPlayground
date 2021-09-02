@@ -8,6 +8,8 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] private float _gravityMultiplier = 1;
     [SerializeField] private float _jumpHeight = 1;
     [SerializeField] [Range(0, 1)] private float _airControl = 1;
+    [SerializeField] private bool _faceWithCamera = false;
+    [SerializeField] private Animator _animator;
 
     private CharacterController _controller;
     private Transform _camTransform;
@@ -62,6 +64,21 @@ public class PlayerBehaviour : MonoBehaviour
 
         // Gravity
         _desiredAirVelocity += Physics.gravity * _gravityMultiplier * Time.fixedDeltaTime;
+
+        // Update animations
+        if (_faceWithCamera)
+        {
+            transform.forward = cameraForward;
+            _animator.SetFloat("Speed", inputForward);
+            _animator.SetFloat("Direction", inputRight);
+        }
+        else if (_desiredVelocity != Vector3.zero)
+        {
+            transform.forward = _desiredVelocity.normalized;
+            _animator.SetFloat("Speed", _desiredVelocity.magnitude / _baseSpeed);
+        }
+
+        _animator.SetBool("Jump", !_controller.isGrounded);
 
         // Move
         _controller.Move((_desiredVelocity + _desiredAirVelocity) * Time.fixedDeltaTime);

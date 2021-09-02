@@ -35,14 +35,13 @@ public class CameraController : MonoBehaviour
         RaycastHit hitInfo;
         if (Physics.Raycast(_target.position, -transform.forward, out hitInfo, _maxDistance))
         {
-            Debug.Log("Test");
             _currentDistance = hitInfo.distance;
         }
         else
         {
             _currentDistance = Mathf.MoveTowards(_currentDistance, _maxDistance, 0.1f);
         }
-
+        
         transform.position = _target.position + (_currentDistance * -transform.forward);
     }
 }
