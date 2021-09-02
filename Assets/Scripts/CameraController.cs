@@ -5,10 +5,11 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform _target;
-    [SerializeField] private float _distanceFromTarget = 30;
+    [SerializeField] private float _maxDistance = 30;
     [SerializeField] private float _sensitivity = 100;
     [SerializeField] private bool _invertY;
 
+    private float _currentDistance = 0;
     private void Update()
     {
         // Rotate
@@ -29,7 +30,19 @@ public class CameraController : MonoBehaviour
             transform.eulerAngles = angles;
         }
 
+
         // Move
-        transform.position = _target.position + (_distanceFromTarget * -transform.forward);
+        RaycastHit hitInfo;
+        if (Physics.Raycast(_target.position, -transform.forward, out hitInfo, _maxDistance))
+        {
+            Debug.Log("Test");
+            _currentDistance = hitInfo.distance;
+        }
+        else
+        {
+            _currentDistance = Mathf.MoveTowards(_currentDistance, _maxDistance, 0.1f);
+        }
+
+        transform.position = _target.position + (_currentDistance * -transform.forward);
     }
 }
