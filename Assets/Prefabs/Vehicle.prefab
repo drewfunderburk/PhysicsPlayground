@@ -321,10 +321,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cbfbe35aeed1b946bec07b9ee644c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frontLeft: {fileID: 0}
-  frontRight: {fileID: 0}
-  rearLeft: {fileID: 0}
-  rearRight: {fileID: 0}
+  frontLeft: {fileID: 6169080521611917368}
+  frontRight: {fileID: 4505991592270071231}
+  rearLeft: {fileID: 7620425660179445557}
+  rearRight: {fileID: 8180811360724411985}
   topSpeed: 500
 --- !u!1001 &975920100321650362
 PrefabInstance:

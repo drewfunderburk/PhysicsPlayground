@@ -7,6 +7,11 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] private float _baseSpeed = 1;
     [SerializeField] private float _gravityMultiplier = 1;
     [SerializeField] private float _jumpHeight = 1;
+    [Space]
+    [SerializeField] private Vector3 _groundCheck;
+    [SerializeField] private float _groundCheckRadius;
+    [SerializeField] private LayerMask _groundMask = ~0;
+    [Space]
     [SerializeField] [Range(0, 1)] private float _airControl = 1;
     [SerializeField] private bool _faceWithCamera = false;
     [SerializeField] private Animator _animator;
@@ -17,7 +22,8 @@ public class PlayerBehaviour : MonoBehaviour
     private Vector3 _desiredVelocity;
     private Vector3 _desiredAirVelocity;
     private bool _isJumpDesired;
-
+    private bool _isGrounded;
+    
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
@@ -26,6 +32,9 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void Update()
     {
+        // Ground Check
+        _isGrounded = Physics.CheckSphere(transform.position + _groundCheck, _groundCheckRadius, _groundMask);
+
         // Get movement input
         float inputRight = Input.GetAxisRaw("Horizontal");
         float inputForward = Input.GetAxisRaw("Vertical");
@@ -50,13 +59,13 @@ public class PlayerBehaviour : MonoBehaviour
         // Get jump input
         _isJumpDesired = Input.GetButton("Jump");
 
-        if (_isJumpDesired && _controller.isGrounded)
+        if (_isJumpDesired && _isGrounded)
         {
             _desiredAirVelocity = transform.up * Mathf.Sqrt(_jumpHeight * -2f * (Physics.gravity.y * _gravityMultiplier));
             //_isJumpDesired = false;
         }
 
-        if (!_isJumpDesired && _controller.isGrounded)
+        if (!_isJumpDesired && _isGrounded)
         {
             _desiredAirVelocity.y = 0;
         }
@@ -81,11 +90,17 @@ public class PlayerBehaviour : MonoBehaviour
         }
 
         _animator.SetFloat("Speed", animatorSpeed);
-
-        _animator.SetBool("Jump", !_controller.isGrounded);
+        _animator.SetBool("Jump", !_isGrounded);
+        _animator.SetFloat("VerticalSpeed", _desiredAirVelocity.y / _jumpHeight);
 
         // Move
         _controller.Move((_desiredVelocity + _desiredAirVelocity) * Time.fixedDeltaTime);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position + _groundCheck, _groundCheckRadius);
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -94,12 +109,13 @@ public class PlayerBehaviour : MonoBehaviour
         {
             _controller.enabled = false;
             _animator.enabled = false;
-
+            /*
             Rigidbody[] rbs = GetComponentsInChildren<Rigidbody>();
 
             foreach (Rigidbody rb in rbs)
                 rb.AddExplosionForce(500, hit.point, 50);
-
+            */
+            
             this.enabled = false;
         }
     }

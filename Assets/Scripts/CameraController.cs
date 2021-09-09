@@ -5,11 +5,27 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform _target;
-    [SerializeField] private float _maxDistance = 30;
+    [Space]
+    [SerializeField] private float _startDistance = 5;
+    [SerializeField] private float _minDistance = 2;
+    [SerializeField] private float _maxDistance = 20;
+    [SerializeField] private float _scrollSensitivity = 1;
+    [SerializeField] [Range(0, 1)] private float _cameraZoomSpeed = 0.2f;
+    [SerializeField] private bool _invertScrollY = false;
+    [Space]
     [SerializeField] private float _sensitivity = 100;
-    [SerializeField] private bool _invertY;
+    [SerializeField] private bool _invertCameraY = false;
 
     private float _currentDistance = 0;
+    private float _targetDistance = 0;
+
+    private void Start()
+    {
+        _currentDistance = _startDistance;
+        _targetDistance = _startDistance;
+        transform.position = _target.position + (_currentDistance * -transform.forward);
+    }
+
     private void Update()
     {
         // Rotate
@@ -18,7 +34,7 @@ public class CameraController : MonoBehaviour
             Vector3 angles = transform.eulerAngles;
             Vector2 rotation;
             rotation.y = Input.GetAxis("Mouse X");
-            rotation.x = -Input.GetAxis("Mouse Y") * (_invertY ? -1 : 1);
+            rotation.x = -Input.GetAxis("Mouse Y") * (_invertCameraY ? -1 : 1);
 
             // Look up and down
             angles.x = Mathf.Clamp(angles.x + rotation.x * _sensitivity, 0, 70);
@@ -30,6 +46,10 @@ public class CameraController : MonoBehaviour
             transform.eulerAngles = angles;
         }
 
+        // Mouse scroll
+        float mouseScroll = -Input.mouseScrollDelta.y;
+        _targetDistance += mouseScroll * _scrollSensitivity;
+        _targetDistance = Mathf.Clamp(_targetDistance, _minDistance, _maxDistance);
 
         // Move
         RaycastHit hitInfo;
@@ -39,7 +59,7 @@ public class CameraController : MonoBehaviour
         }
         else
         {
-            _currentDistance = Mathf.MoveTowards(_currentDistance, _maxDistance, 0.1f);
+            _currentDistance = Mathf.MoveTowards(_currentDistance, _targetDistance, _cameraZoomSpeed);
         }
         
         transform.position = _target.position + (_currentDistance * -transform.forward);
