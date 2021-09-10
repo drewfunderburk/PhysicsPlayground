@@ -109,13 +109,6 @@ public class PlayerBehaviour : MonoBehaviour
         {
             _controller.enabled = false;
             _animator.enabled = false;
-            /*
-            Rigidbody[] rbs = GetComponentsInChildren<Rigidbody>();
-
-            foreach (Rigidbody rb in rbs)
-                rb.AddExplosionForce(500, hit.point, 50);
-            */
-            
             this.enabled = false;
         }
     }
