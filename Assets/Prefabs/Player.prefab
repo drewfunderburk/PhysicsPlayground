@@ -164,11 +164,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e7e6e861475884dbe37c593d15e0d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseMoveSpeed: 2.5
+  _baseMoveSpeed: 3
   _sprintSpeedPercentage: 1.3
   _isJumpAllowed: 1
   _jumpHeight: 1
-  _airMovementForce: 0
+  _airMovementForce: 300
   _isCrouchAllowed: 0
   _crouchHeightPercentage: 0.5
   _crouchSpeedPercentage: 0.5
@@ -237,6 +237,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8ef613e4-1f9c-4b7d-9ac1-f5c1bdf59132
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2209578763554047752}
+        m_TargetAssemblyTypeName: PlayerMovementBehaviour, Assembly-CSharp
+        m_MethodName: OnSprint
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5894d321-cfa1-4890-8ada-abd9ab6422b1
+    m_ActionName: Player/Sprint[/Keyboard/shift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

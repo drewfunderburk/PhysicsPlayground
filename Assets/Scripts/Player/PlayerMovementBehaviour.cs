@@ -129,7 +129,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
         _collider.enabled = true;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         // Ground Check
         _isGrounded = Physics.CheckSphere(transform.position + _groundCheck, _groundCheckRadius, _groundMask);
