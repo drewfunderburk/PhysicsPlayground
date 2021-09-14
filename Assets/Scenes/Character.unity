@@ -1215,7 +1215,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &2094482756
 Transform:
@@ -1246,7 +1246,7 @@ MonoBehaviour:
   target: {fileID: 2051483680}
   projectile: {fileID: 2309274572707215471, guid: 7cccf36a803da174ba6c870b5bd26648, type: 3}
   projectileTime: 2
-  TargetRadius: 20
+  _targetRadius: 10
   FireRate: 1
 --- !u!1001 &1085271221363483394
 PrefabInstance:
