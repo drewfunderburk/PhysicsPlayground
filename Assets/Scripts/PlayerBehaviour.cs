@@ -102,14 +102,4 @@ public class PlayerBehaviour : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position + _groundCheck, _groundCheckRadius);
     }
-
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if (hit.gameObject.CompareTag("Finish"))
-        {
-            _controller.enabled = false;
-            _animator.enabled = false;
-            this.enabled = false;
-        }
-    }
 }
