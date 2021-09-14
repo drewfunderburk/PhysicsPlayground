@@ -15,20 +15,6 @@ public class DamageOnCollisionBehaviour : MonoBehaviour
     [Tooltip("What layers this object should check when looking to deal damage")]
     [SerializeField] private LayerMask _damageMask = ~0;
 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        // If the other GameObject's layer is in _whatToDamage
-        if (((1 << hit.gameObject.layer) & _damageMask) != 0)
-        {
-            // Get a reference to the other object's HealthBehaviour
-            IDamageable otherHealth = hit.gameObject.GetComponent<IDamageable>();
-
-            // If it has a HealthBehaviour, damage it
-            if (otherHealth != null)
-                otherHealth.TakeDamage(_damage);
-        }
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         // If the other GameObject's layer is in _whatToDamage

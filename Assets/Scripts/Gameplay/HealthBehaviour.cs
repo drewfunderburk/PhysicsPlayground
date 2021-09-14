@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class HealthBehaviour : MonoBehaviour
+public class HealthBehaviour : MonoBehaviour, IDamageable
 {
     [SerializeField] private float _maxHealth = 1;
     [SerializeField] private bool _invincible = false;

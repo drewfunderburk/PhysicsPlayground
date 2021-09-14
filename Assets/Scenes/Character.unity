@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 229891861}
   - component: {fileID: 229891860}
   - component: {fileID: 229891859}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 278304537}
   - component: {fileID: 278304536}
   - component: {fileID: 278304535}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -472,8 +472,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280914878}
-  m_LocalRotation: {x: 0.10846407, y: 0.43817008, z: -0.0533988, w: 0.8907251}
-  m_LocalPosition: {x: -50.095444, y: 16.635803, z: -38.5969}
+  m_LocalRotation: {x: 0.10277055, y: 0.8661677, z: -0.19936307, w: 0.44659397}
+  m_LocalPosition: {x: -3.9645498, y: 3.76549, z: 2.8225062}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -821,7 +821,7 @@ GameObject:
   - component: {fileID: 1353520873}
   - component: {fileID: 1353520872}
   - component: {fileID: 1353520871}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (1)
   m_TagString: Finish
   m_Icon: {fileID: 0}
@@ -1302,6 +1302,14 @@ PrefabInstance:
     - target: {fileID: 1134321727990296914, guid: 1ada5bb35f19efb48aeb3ced6c5c13d7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209578763554047752, guid: 1ada5bb35f19efb48aeb3ced6c5c13d7, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 280914878}
+    - target: {fileID: 2209578763554047752, guid: 1ada5bb35f19efb48aeb3ced6c5c13d7, type: 3}
+      propertyPath: _airMovementForce
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ada5bb35f19efb48aeb3ced6c5c13d7, type: 3}
