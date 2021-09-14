@@ -1195,29 +1195,28 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2094482756}
+  - component: {fileID: 2094482757}
   - component: {fileID: 2094482755}
   m_Layer: 0
   m_Name: Launcher
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2094482755
-MonoBehaviour:
+--- !u!135 &2094482755
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094482754}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3306729a2f14ca44287b4b068ef61d5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 2051483680}
-  projectile: {fileID: 2309274572707215471, guid: 7cccf36a803da174ba6c870b5bd26648, type: 3}
-  projectileTime: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &2094482756
 Transform:
   m_ObjectHideFlags: 0
@@ -1232,6 +1231,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2094482757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094482754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f6be224efa3b347ac4ad212860ce97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2051483680}
+  projectile: {fileID: 2309274572707215471, guid: 7cccf36a803da174ba6c870b5bd26648, type: 3}
+  projectileTime: 2
+  TargetRadius: 20
+  FireRate: 1
 --- !u!1001 &1085271221363483394
 PrefabInstance:
   m_ObjectHideFlags: 0
