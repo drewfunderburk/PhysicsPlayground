@@ -164,10 +164,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e7e6e861475884dbe37c593d15e0d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseMoveSpeed: 3
+  _baseMoveSpeed: 3.5
   _sprintSpeedPercentage: 1.3
   _isJumpAllowed: 1
-  _jumpHeight: 1
+  _jumpHeight: 2
   _airMovementForce: 300
   _isCrouchAllowed: 0
   _crouchHeightPercentage: 0.5
