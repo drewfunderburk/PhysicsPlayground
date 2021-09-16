@@ -53,7 +53,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -455,7 +455,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -516,7 +516,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -617,6 +617,7 @@ GameObject:
   - component: {fileID: 4012490243348141281}
   - component: {fileID: 5228365572119219053}
   - component: {fileID: 7537063084943298546}
+  - component: {fileID: 8627901260901659554}
   m_Layer: 0
   m_Name: Vehicle (WheelCollider)
   m_TagString: Untagged
@@ -691,7 +692,20 @@ MonoBehaviour:
   _rearLeftWheelTransform: {fileID: 5137275854658187928}
   _rearRightWheelTransform: {fileID: 1120600626751150694}
   _maxSteeringAngle: 30
-  _motorForce: 1000
+  _motorForce: 2000
+--- !u!114 &8627901260901659554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4743139992326780214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60062065397bead46b8f0839f5d488ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: 114
 --- !u!1 &5405768744835424120
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,7 +1149,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1

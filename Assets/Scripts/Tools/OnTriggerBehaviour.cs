@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class OnCollisionBehaviour : MonoBehaviour
+public class OnTriggerBehaviour : MonoBehaviour
 {
     [SerializeField] private LayerMask _collisionMask = ~0;
     
@@ -12,28 +12,28 @@ public class OnCollisionBehaviour : MonoBehaviour
     public UnityEvent OnStay;
     public UnityEvent OnExit;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
         // If the other GameObject's layer is not in _collisionMask, return
-        if (((1 << collision.gameObject.layer) & _collisionMask) == 0)
+        if (((1 << collider.gameObject.layer) & _collisionMask) == 0)
             return;
 
         OnEnter.Invoke();
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider collider)
     {
         // If the other GameObject's layer is not in _collisionMask, return
-        if (((1 << collision.gameObject.layer) & _collisionMask) == 0)
+        if (((1 << collider.gameObject.layer) & _collisionMask) == 0)
             return;
 
         OnStay.Invoke();
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collider)
     {
         // If the other GameObject's layer is not in _collisionMask, return
-        if (((1 << collision.gameObject.layer) & _collisionMask) == 0)
+        if (((1 << collider.gameObject.layer) & _collisionMask) == 0)
             return;
 
         OnExit.Invoke();

@@ -19,6 +19,7 @@ public class UtilityButtonPushBehaviour : MonoBehaviour
             ButtonPush.Invoke();
     }
 
+    /*
     [MenuItem("GameObject/Utility/Utility Button", false, 10)]
     static void CreateUtilityButton(MenuCommand menuCommand)
     {
@@ -35,6 +36,7 @@ public class UtilityButtonPushBehaviour : MonoBehaviour
         // Select this object
         Selection.activeObject = obj;
     }
+*/
 }
 
 #if UNITY_EDITOR
