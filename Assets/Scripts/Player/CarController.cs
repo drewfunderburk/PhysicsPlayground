@@ -16,9 +16,11 @@ public class CarController : MonoBehaviour
     [Space]
     [SerializeField] private float _maxSteeringAngle = 30f;
     [SerializeField] private float _motorForce = 50;
+    [SerializeField] private float _brakeForce = 50;
 
     private float _horizontalInput;
     private float _verticalInput;
+    private bool _brakeInput;
     private float _steeringAngle;
 
 
@@ -34,6 +36,7 @@ public class CarController : MonoBehaviour
     {
         _horizontalInput = Input.GetAxis("Horizontal");
         _verticalInput = Input.GetAxis("Vertical");
+        _brakeInput = Input.GetButton("Jump");
     }
 
     private void Steer()
@@ -47,6 +50,11 @@ public class CarController : MonoBehaviour
     {
         _rearRightWheelCollider.motorTorque = _motorForce * _verticalInput;
         _rearLeftWheelCollider.motorTorque = _motorForce * _verticalInput;
+
+        _frontLeftWheelCollider.brakeTorque = _brakeForce * (_brakeInput ? 1 : 0);
+        _frontRightWheelCollider.brakeTorque = _brakeForce * (_brakeInput ? 1 : 0);
+        _rearLeftWheelCollider.brakeTorque = _brakeForce * (_brakeInput ? 1 : 0);
+        _rearRightWheelCollider.brakeTorque = _brakeForce * (_brakeInput ? 1 : 0);
     }
 
     private void UpdateWheelPoses()

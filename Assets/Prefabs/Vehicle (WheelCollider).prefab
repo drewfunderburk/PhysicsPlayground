@@ -53,7 +53,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 2
+    m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -455,7 +455,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 2
+    m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -516,7 +516,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 2
+    m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -691,8 +691,9 @@ MonoBehaviour:
   _frontRightWheelTransform: {fileID: 8159254219961369051}
   _rearLeftWheelTransform: {fileID: 5137275854658187928}
   _rearRightWheelTransform: {fileID: 1120600626751150694}
-  _maxSteeringAngle: 30
-  _motorForce: 2000
+  _maxSteeringAngle: 35
+  _motorForce: 1500
+  _brakeForce: 1500
 --- !u!114 &8627901260901659554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1149,7 +1150,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 2
+    m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
