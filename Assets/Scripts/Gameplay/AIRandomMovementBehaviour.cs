@@ -47,7 +47,7 @@ public class AIRandomMovementBehaviour : MonoBehaviour
         Vector3 unitCircle = new Vector3(unitCircle2D.x, transform.position.y, unitCircle2D.y);
 
         NavMeshHit hit;
-        if (NavMesh.SamplePosition(unitCircle, out hit, 2, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(transform.position + unitCircle, out hit, 2, NavMesh.AllAreas))
             _agent.SetDestination(hit.position);
     }
 
