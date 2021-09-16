@@ -46,7 +46,7 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
-  m_Mass: 100
+  m_Mass: 150
   m_WheelDampingRate: 1
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
@@ -448,7 +448,7 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
-  m_Mass: 100
+  m_Mass: 150
   m_WheelDampingRate: 1
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
@@ -509,7 +509,7 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
-  m_Mass: 100
+  m_Mass: 150
   m_WheelDampingRate: 1
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
@@ -669,7 +669,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.7451594, z: 2}
+  m_Size: {x: 1, y: 0.75, z: 2}
   m_Center: {x: 0, y: 0.535, z: 0}
 --- !u!114 &7537063084943298546
 MonoBehaviour:
@@ -691,9 +691,9 @@ MonoBehaviour:
   _frontRightWheelTransform: {fileID: 8159254219961369051}
   _rearLeftWheelTransform: {fileID: 5137275854658187928}
   _rearRightWheelTransform: {fileID: 1120600626751150694}
-  _maxSteeringAngle: 35
-  _motorForce: 1500
-  _brakeForce: 1500
+  _maxSteeringAngle: 30
+  _motorForce: 1000
+  _brakeForce: 1000
 --- !u!114 &8627901260901659554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1143,7 +1143,7 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
-  m_Mass: 100
+  m_Mass: 150
   m_WheelDampingRate: 1
   m_ForwardFriction:
     m_ExtremumSlip: 0.4

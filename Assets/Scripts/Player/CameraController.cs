@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] [Range(0, 1)] private float _cameraZoomSpeed = 0.2f;
     [SerializeField] private bool _invertScrollY = false;
     [Space]
-    [SerializeField] private float _sensitivity = 100;
+    [SerializeField] private float _sensitivity = 5;
     [SerializeField] private bool _invertCameraY = false;
 
     private float _currentDistance = 0;
