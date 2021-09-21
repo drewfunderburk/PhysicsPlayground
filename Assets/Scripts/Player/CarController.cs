@@ -25,6 +25,8 @@ public class CarController : MonoBehaviour
     [SerializeField] private bool _resetAfterFall = true;
     [SerializeField] private float _resetY = -10;
 
+    public bool IsBeingControlled = false;
+
     private Rigidbody _rigidbody;
 
     private float _horizontalInput;
@@ -46,7 +48,8 @@ public class CarController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        GetInput();
+        if (IsBeingControlled)
+            GetInput();
         Steer();
         Accelerate();
         Drift();
@@ -124,9 +127,12 @@ public class CarController : MonoBehaviour
 
     public void ResetCar()
     {
-        float y = transform.position.y + 2;
+        // Position and rotation
+        float y = transform.position.y + 1;
         transform.position += new Vector3(0, y, 0);
         transform.rotation = Quaternion.identity;
+
+        // Velocity
         _rigidbody.velocity = Vector3.zero;
         _rigidbody.angularVelocity = Vector3.zero;
     }

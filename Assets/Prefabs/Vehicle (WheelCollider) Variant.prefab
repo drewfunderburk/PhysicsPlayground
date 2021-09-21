@@ -33,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 503311501208256973, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 747627543867546464, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
       propertyPath: m_Layer
@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2087405518949440455, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
       propertyPath: m_Mass
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2087405518949440455, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
       propertyPath: m_WheelDampingRate
@@ -121,7 +121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2255038044388389053, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
       propertyPath: m_Mass
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2255038044388389053, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
       propertyPath: m_WheelDampingRate
@@ -161,11 +161,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3396946646376924695, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3739236600032438865, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3956745790736347273, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -233,7 +233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4547708325697695146, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
       propertyPath: m_Mass
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4547708325697695146, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
       propertyPath: m_WheelDampingRate
@@ -333,7 +333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6977504497243818977, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
       propertyPath: m_Mass
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6977504497243818977, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
       propertyPath: m_WheelDampingRate
@@ -369,7 +369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7235045333372258505, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7537063084943298546, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
       propertyPath: _driftStiffness
@@ -377,15 +377,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7537063084943298546, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
       propertyPath: _motorForce
-      value: 500
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 7537063084943298546, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
       propertyPath: _idleBrakingForce
-      value: 100
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 7537063084943298546, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
       propertyPath: _resetY
       value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537063084943298546, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
+      propertyPath: _frontWheelDrive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537063084943298546, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
+      propertyPath: _driftSmoothDampTime
+      value: 0.031
       objectReference: {fileID: 0}
     - target: {fileID: 7807719775420899421, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
       propertyPath: m_Layer
