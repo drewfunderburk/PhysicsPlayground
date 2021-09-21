@@ -12,6 +12,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float _scrollSensitivity = 1;
     [SerializeField] [Range(0, 1)] private float _cameraZoomSpeed = 0.2f;
     [SerializeField] private bool _invertScrollY = false;
+    [SerializeField] private LayerMask _layerMask = ~0;
     [Space]
     [SerializeField] private float _sensitivity = 5;
     [SerializeField] private bool _invertCameraY = false;
@@ -53,7 +54,7 @@ public class CameraController : MonoBehaviour
 
         // Move
         RaycastHit hitInfo;
-        if (Physics.Raycast(_target.position, -transform.forward, out hitInfo, _maxDistance))
+        if (Physics.Raycast(_target.position, -transform.forward, out hitInfo, _maxDistance, _layerMask))
         {
             _currentDistance = hitInfo.distance;
         }
