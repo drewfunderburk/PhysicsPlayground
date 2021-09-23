@@ -17,7 +17,7 @@ public class BlackboardBehaviour : MonoBehaviour
             Instance = this;
         if (Instance != this)
             Destroy(gameObject);
-        DontDestroyOnLoad(this);
+        // DontDestroyOnLoad(this);
     }
 
     public void IncreaseScore(int amount)

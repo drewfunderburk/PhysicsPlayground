@@ -67,5 +67,6 @@ public class AIRandomMovementBehaviour : MonoBehaviour
         // Disable parent parts
         _collider.enabled = false;
         _agent.enabled = false;
+        _animator.enabled = false;
     }
 }
