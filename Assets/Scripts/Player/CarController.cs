@@ -33,7 +33,7 @@ public class CarController : MonoBehaviour
     private float _verticalInput;
     private bool _brakeInput;
     private float _steeringAngle;
-    private Vector3 _startPosition;
+    private History<Vector3> _positionHistory;
 
     private void Awake()
     {
@@ -42,9 +42,21 @@ public class CarController : MonoBehaviour
 
     private void Start()
     {
-        _startPosition = transform.position;
+        _positionHistory = new History<Vector3>(50);
+        _positionHistory.Enqueue(transform.position);
     }
 
+    private void OnDrawGizmos()
+    {
+        if (_positionHistory == null || _positionHistory.Count == 0)
+            return;
+
+        Gizmos.color = Color.green;
+        foreach (Vector3 position in _positionHistory.ToArray())
+        {
+            Gizmos.DrawWireSphere(position, 0.1f);
+        }
+    }
 
     private void FixedUpdate()
     {
@@ -55,9 +67,16 @@ public class CarController : MonoBehaviour
         Drift();
         UpdateWheelPoses();
 
+        // Save last position where all 4 wheels were grounded
+        if (_frontRightWheelCollider.isGrounded &&
+            _frontLeftWheelCollider.isGrounded &&
+            _rearRightWheelCollider.isGrounded &&
+            _rearLeftWheelCollider.isGrounded)
+            _positionHistory.Enqueue(transform.position);
+
         if (_resetAfterFall && transform.position.y < _resetY)
         {
-            transform.position = _startPosition;
+            transform.position = _positionHistory.Dequeue();
             transform.rotation = Quaternion.identity;
             _rigidbody.velocity = Vector3.zero;
             _rigidbody.angularVelocity = Vector3.zero;
@@ -128,8 +147,7 @@ public class CarController : MonoBehaviour
     public void ResetCar()
     {
         // Position and rotation
-        float y = transform.position.y + 1;
-        transform.position += new Vector3(0, y, 0);
+        transform.position = _positionHistory.Dequeue();
         transform.rotation = Quaternion.identity;
 
         // Velocity
