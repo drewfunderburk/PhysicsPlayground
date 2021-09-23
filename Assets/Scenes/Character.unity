@@ -4120,6 +4120,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4178041053176211313, guid: c64c8c27cc672fc4292d54b7a0f87b8c, type: 3}
+      propertyPath: m_text
+      value: 'WASD to move
+
+        Space to drift
+
+        R to reset
+
+        Esc
+        to reload the scene
+
+        Right click and drag to adjust the camera
+
+        Left
+        click a UnityChan to send her flying'
+      objectReference: {fileID: 0}
     - target: {fileID: 8658282995124358690, guid: c64c8c27cc672fc4292d54b7a0f87b8c, type: 3}
       propertyPath: m_Name
       value: Vehicle (WheelCollider) Variant
