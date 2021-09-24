@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,16 +32,18 @@ public class ImageFadeBehaviour : MonoBehaviour
     private void Start()
     {
         if (_fadeInStart)
-            Fade();
+        {
+            Fade(true);
+        }
     }
 
-    public void Fade()
+    public void Fade(bool swapDirection)
     {
         if (!_isFading)
-            StartCoroutine(FadeCoroutine());
+            StartCoroutine(FadeCoroutine(swapDirection));
     }
 
-    private IEnumerator FadeCoroutine()
+    private IEnumerator FadeCoroutine(bool swapDirection)
     {
         _isFading = true;
         while (_timer < _fadeTime)
@@ -63,6 +66,13 @@ public class ImageFadeBehaviour : MonoBehaviour
             }
 
             yield return null;
+        }
+
+        if (swapDirection)
+        {
+            int value = (int)_fadeDirection;
+            value = (value + 1) % 2;
+            _fadeDirection = (Direction)value;
         }
 
         _timer = 0;

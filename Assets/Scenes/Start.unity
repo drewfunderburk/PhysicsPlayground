@@ -1588,6 +1588,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1134321727990296914, guid: c87a25151d4e4544990680a3ceec4ecb, type: 3}
   m_PrefabInstance: {fileID: 1063514012}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1086526842 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 461064090043634996, guid: b1deb70edff4de84a898eb082e91644c, type: 3}
+  m_PrefabInstance: {fileID: 461064089393279899}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a447477397abcfd4e97e6ba41ad7ebdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1326536853
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1935,6 +1946,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1086526842}
+        m_TargetAssemblyTypeName: ImageFadeBehaviour, Assembly-CSharp
+        m_MethodName: Fade
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1455042890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1947,7 +1970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b71c7b0fa3c96264ab8ed2143b9476fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _delay: 0
+  _delay: 1
 --- !u!1001 &1774742662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2762,6 +2785,10 @@ PrefabInstance:
     - target: {fileID: 461064089504464094, guid: b1deb70edff4de84a898eb082e91644c, type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 461064090043634996, guid: b1deb70edff4de84a898eb082e91644c, type: 3}
+      propertyPath: _fadeTime
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1deb70edff4de84a898eb082e91644c, type: 3}
