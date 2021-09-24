@@ -133,7 +133,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 21.299988, y: 0}
+  m_AnchoredPosition: {x: 21.299927, y: 0}
   m_SizeDelta: {x: 400, y: 108.40465}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &1949719654
@@ -170,13 +170,15 @@ MonoBehaviour:
 
     R to reset
 
-    Esc to reload the
+    T to reload the
     scene
+
+    Esc to quit
 
     Right click and drag to adjust the camera
 
-    Left click a UnityChan
-    to send her flying'
+    Left
+    click a UnityChan to send her flying'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -957,8 +959,11 @@ GameObject:
   - component: {fileID: 4012490243348141281}
   - component: {fileID: 5228365572119219053}
   - component: {fileID: 7537063084943298546}
-  - component: {fileID: 8627901260901659554}
   - component: {fileID: 5525215644785429733}
+  - component: {fileID: 2815607795486568491}
+  - component: {fileID: 2015639556108598613}
+  - component: {fileID: 7274215898497238270}
+  - component: {fileID: 6661440031158982139}
   m_Layer: 8
   m_Name: Vehicle (WheelCollider)
   m_TagString: Untagged
@@ -1043,19 +1048,6 @@ MonoBehaviour:
   _resetAfterFall: 1
   _resetY: -15
   IsBeingControlled: 1
---- !u!114 &8627901260901659554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4743139992326780214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60062065397bead46b8f0839f5d488ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _key: 27
 --- !u!114 &5525215644785429733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1076,6 +1068,90 @@ MonoBehaviour:
       - m_Target: {fileID: 7537063084943298546}
         m_TargetAssemblyTypeName: CarController, Assembly-CSharp
         m_MethodName: ResetCar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2815607795486568491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4743139992326780214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bd4ba0c7584a294897f553bcdf55c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _delay: 1
+--- !u!114 &2015639556108598613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4743139992326780214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d0295b96cfa8b4aade01d5703ef5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InvokeInUpdate: 0
+  Key: 27
+  ButtonPush:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2815607795486568491}
+        m_TargetAssemblyTypeName: QuitBehaviour, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7274215898497238270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4743139992326780214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd024650fcd6f0548875640a4fa93d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _delay: 1
+--- !u!114 &6661440031158982139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4743139992326780214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d0295b96cfa8b4aade01d5703ef5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InvokeInUpdate: 0
+  Key: 116
+  ButtonPush:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7274215898497238270}
+        m_TargetAssemblyTypeName: ReloadSceneBehaviour, Assembly-CSharp
+        m_MethodName: ReloadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

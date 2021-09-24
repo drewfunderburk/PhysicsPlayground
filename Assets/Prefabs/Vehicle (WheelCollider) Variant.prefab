@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &6519205884378760626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8658282995124358690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd024650fcd6f0548875640a4fa93d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _delay: 1
 --- !u!1001 &4178041054452742932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7,10 +20,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1949719652, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 21.299927
-      objectReference: {fileID: 0}
     - target: {fileID: 3956745790736347273, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.08989906
@@ -59,5 +68,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vehicle (WheelCollider) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5525215644785429733, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
+      propertyPath: ButtonPush.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5525215644785429733, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
+      propertyPath: ButtonPush.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CarController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5525215644785429733, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
+      propertyPath: ButtonPush.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5525215644785429733, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
+      propertyPath: ButtonPush.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
+--- !u!1 &8658282995124358690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4743139992326780214, guid: 687179b5331dd9c49871b0593017a36b, type: 3}
+  m_PrefabInstance: {fileID: 4178041054452742932}
+  m_PrefabAsset: {fileID: 0}
