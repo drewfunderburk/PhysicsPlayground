@@ -1,11 +1,5 @@
 # PhysicsPlayground
 
-| Drew Funderburk    |
-| :----------------- |
-| s208059            |
-| Physics Playground |
-| 09/23/2021         |
-
 ## How to play
 
 Download the latest release [here](https://github.com/drewfunderburk/PhysicsPlayground/releases)
